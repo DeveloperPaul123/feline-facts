@@ -25,7 +25,7 @@ feline-facts
 
 Feline Facts is a simple Flutter app that shows facts about cats. This project is my first Flutter application. It pulls data from the [cat facts API](https://catfact.ninja) and displays each fact one by one in a simple way. It was constructed while following [this](https://www.youtube.com/watch?v=KjE2IDphA_U&list=PLB6lc7nQ1n4iYGE_khpXRdJkJEp9WOech) tutorial by ResoCoder.
 
-This app attemps to use clean architecture and the `BLoC` pattern.
+This app attemps to use clean architecture and the `BLoC` pattern with local caching of API data using an SQLite database. Note that this app has only been tested on Android.
 
 ## Screenshots
 
