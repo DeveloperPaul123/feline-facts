@@ -1,0 +1,55 @@
+{
+    "current_page": 1,
+    "data": [
+      {
+        "fact": "During the time of the Spanish Inquisition, Pope Innocent VIII condemned cats as evil and thousands of cats were burned. Unfortunately, the widespread killing of cats led to an explosion of the rat population, which exacerbated the effects of the Black Death.",
+        "length": 259
+      },
+      {
+        "fact": "The little tufts of hair in a cat’s ear that help keep out dirt direct sounds into the ear, and insulate the ears are called “ear furnishings.”",
+        "length": 143
+      },
+      {
+        "fact": "A cat will tremble or shiver when it is extreme pain.",
+        "length": 53
+      },
+      {
+        "fact": "Approximately 40,000 people are bitten by cats in the U.S. annually.",
+        "length": 68
+      },
+      {
+        "fact": "A cats field of vision is about 185 degrees.",
+        "length": 44
+      },
+      {
+        "fact": "A cat has approximately 60 to 80 million olfactory cells (a human has between 5 and 20 million).",
+        "length": 96
+      },
+      {
+        "fact": "A cat has the power to sometimes heal themselves by purring. A domestic cat's purr has a frequency of between 25 and 150 Hertz, which happens to be the frequency at which muscles and bones best grow and repair themselves. ",
+        "length": 222
+      },
+      {
+        "fact": "A cat will tremble or shiver when it is extreme pain.",
+        "length": 53
+      },
+      {
+        "fact": "Cats have 30 vertebrae (humans have 33 vertebrae during early development; 26 after the sacral and coccygeal regions fuse)",
+        "length": 122
+      },
+      {
+        "fact": "A commemorative tower was built in Scotland for a cat named Towser, who caught nearly 30,000 mice in her lifetime.",
+        "length": 114
+      }
+    ],
+    "first_page_url": "https://catfact.ninja/facts?page=1",
+    "from": 1,
+    "last_page": 34,
+    "last_page_url": "https://catfact.ninja/facts?page=34",
+    "next_page_url": "https://catfact.ninja/facts?page=2",
+    "path": "https://catfact.ninja/facts",
+    "per_page": "10",
+    "prev_page_url": null,
+    "to": 10,
+    "total": 332
+  }
