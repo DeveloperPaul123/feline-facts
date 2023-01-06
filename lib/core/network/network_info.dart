@@ -1,16 +1,15 @@
-
-import 'package:data_connection_checker/data_connection_checker.dart';
-import 'package:flutter/foundation.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 abstract class BaseNetworkInfo {
-  Future<bool> get isConnected;
+  Future<bool> isConnected();
 }
 
 class NetworkInfo implements BaseNetworkInfo {
-  final DataConnectionChecker connectionChecker;
-
-  NetworkInfo({@required this.connectionChecker});
+  bool connectionStatus = false;
+  NetworkInfo();
   @override
-  Future<bool> get isConnected => connectionChecker.hasConnection;
-
+  Future<bool> isConnected() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
+  }
 }

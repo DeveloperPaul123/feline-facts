@@ -5,7 +5,6 @@ import 'package:felinefacts/core/network/network_info.dart';
 import 'package:felinefacts/data/datasources/cat_trivia_local_datasource.dart';
 import 'package:felinefacts/data/datasources/cat_trivia_remote_datasource.dart';
 import 'package:felinefacts/domain/entities/cat_trivia.dart';
-import 'package:flutter/cupertino.dart';
 
 abstract class BaseCatTriviaRepository {
   Future<Either<Failure, List<CatTrivia>>> getCatFacts(
@@ -19,9 +18,9 @@ class CatTriviaRepository implements BaseCatTriviaRepository {
   final BaseNetworkInfo networkInfo;
 
   CatTriviaRepository(
-      {@required this.localDatasource,
-      @required this.remoteDataSource,
-      @required this.networkInfo});
+      {required this.localDatasource,
+      required this.remoteDataSource,
+      required this.networkInfo});
 
   @override
   Future<Either<Failure, CatTrivia>> getCatFact() async {
@@ -37,7 +36,7 @@ class CatTriviaRepository implements BaseCatTriviaRepository {
       return Right(allLocalFacts);
     } on CacheException {
       // we have no facts, pull them from the API
-      if (await networkInfo.isConnected) {
+      if (await networkInfo.isConnected()) {
         try {
           // retrive from API
           final catTrivia =

@@ -4,7 +4,12 @@ class FactDisplay extends StatelessWidget {
   final String fact;
   final int index;
   final int totalFacts;
-  FactDisplay({Key key, @required this.fact, @required this.index, @required this.totalFacts}) : super(key: key);
+  FactDisplay(
+      {Key? key,
+      required this.fact,
+      required this.index,
+      required this.totalFacts})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +24,13 @@ class FactDisplay extends StatelessWidget {
               textAlign: TextAlign.center,
               style: textTheme.headline3,
             ),
-            SizedBox(height: 16.0,),
+            SizedBox(
+              height: 16.0,
+            ),
             Text(
               fact,
               textAlign: TextAlign.justify,
-              style: textTheme.bodyText2.apply(
-                fontSizeFactor: 2.0
-              ),
+              style: textTheme.bodyText2!.apply(fontSizeFactor: 2.0),
             ),
           ],
         ),

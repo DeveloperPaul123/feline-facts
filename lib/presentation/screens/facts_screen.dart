@@ -4,6 +4,7 @@ import 'package:felinefacts/presentation/widgets/fact_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:felinefacts/injection_container.dart' as di;
+import 'package:carousel_slider/carousel_slider.dart';
 
 class FactsScreen extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class FactsScreen extends StatefulWidget {
 }
 
 class _FactsScreenState extends State<FactsScreen> {
-  List<CatTrivia> _factsList;
+  late List<CatTrivia> _factsList = List.empty();
   int _factIndex = 0;
 
   @override
@@ -24,7 +25,7 @@ class _FactsScreenState extends State<FactsScreen> {
     return Scaffold(
       appBar: null,
       body: BlocProvider(
-        builder: (_) => di.serviceLocator<CatTriviaBloc>(),
+        create: (_) => di.serviceLocator<CatTriviaBloc>(),
         child: Center(
           child: Container(
             height: MediaQuery.of(context).size.height,
@@ -37,8 +38,7 @@ class _FactsScreenState extends State<FactsScreen> {
                   if (state is Empty) {
                     // no stuff
                     BlocProvider.of<CatTriviaBloc>(context)
-                        .dispatch(GetCatTrivaListEvent());
-                    // _setFloatingActionButtonState(false);
+                        .add(GetCatTriviaListEvent());
                     return FactDisplay(
                       fact: "No facts",
                       index: 0,
@@ -52,22 +52,22 @@ class _FactsScreenState extends State<FactsScreen> {
                   } else if (state is Loaded) {
                     _factsList = state.triviaList;
                     return FactDisplay(
-                      fact: _factsList[_factIndex].fact,
-                      index: _factIndex,
-                      totalFacts: _factsList != null ? _factsList.length : 0);
+                        fact: _factsList[_factIndex].fact,
+                        index: _factIndex,
+                        totalFacts: _factsList.length);
                   }
-                  return Text("");
+                  return Text("Oops");
                 }),
               ],
             ),
           ),
         ),
       ),
-      floatingActionButton: _buildFloatingActionButton(),
+      floatingActionButton: _buildFloatingActionButtons(),
     );
   }
 
-  Widget _buildFloatingActionButton() {
+  Widget _buildFloatingActionButtons() {
     return Container(
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -92,28 +92,26 @@ class _FactsScreenState extends State<FactsScreen> {
   }
 
   void _previousFact() {
-    if (_factsList != null) {
-      setState(() {
-        if (_factIndex - 1 < 0) {
-          _factIndex = _factsList.length - 1;
-        } else {
-          _factIndex--;
-        }
-      });
-    }
+    setState(() {
+      if (_factIndex - 1 < 0) {
+        _factIndex = _factsList.length - 1;
+      } else {
+        _factIndex--;
+      }
+    });
+
     print("Fact ${_factIndex + 1} of ${_factsList.length}");
   }
 
   void _nextFact() {
-    if (_factsList != null) {
-      setState(() {
-        if (_factIndex + 1 >= _factsList.length) {
-          _factIndex = 0;
-        } else {
-          _factIndex++;
-        }
-      });
-    }
+    setState(() {
+      if (_factIndex + 1 >= _factsList.length) {
+        _factIndex = 0;
+      } else {
+        _factIndex++;
+      }
+    });
+
     print("Fact ${_factIndex + 1} of ${_factsList.length}");
   }
 }

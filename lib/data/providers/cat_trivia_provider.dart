@@ -1,6 +1,5 @@
 import 'package:felinefacts/data/models/cat_trivia_model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:tekartik_app_flutter_sqflite/sqflite.dart';
 
 const TABLE_CAT_TRIVIA = 'cat_trivia';
 const COLUMN_ID = '_id';
@@ -15,20 +14,24 @@ abstract class BaseCatTriviaProvider {
 }
 
 class CatTriviaProvider extends BaseCatTriviaProvider {
-  Database _db;
+  final DatabaseFactory dbFactory;
+  late Database _db;
   final String databasePath;
-  CatTriviaProvider({@required this.databasePath});
+
+  CatTriviaProvider({required this.databasePath, required this.dbFactory});
 
   Future _open(String path) async {
-    _db = await openDatabase(path, version: 1,
-        onCreate: (Database db, int version) async {
-      await db.execute('''
+    _db = await databaseFactory.openDatabase(path,
+        options: OpenDatabaseOptions(
+            version: 1,
+            onCreate: (Database db, int version) async {
+              await db.execute('''
         create table $TABLE_CAT_TRIVIA ( 
           $COLUMN_ID integer primary key autoincrement, 
           $COLUMN_FACT text not null,
           $COLUMN_LENGTH integer not null)
         ''');
-    });
+            }));
   }
 
   Future _close() async {
@@ -46,7 +49,7 @@ class CatTriviaProvider extends BaseCatTriviaProvider {
   @override
   Future<List<int>> insertAll(List<CatTriviaModel> models) async {
     await _open(databasePath);
-    List<int> ids = List<int>();
+    List<int> ids = <int>[];
     for (final model in models) {
       final id = await _db.insert(TABLE_CAT_TRIVIA, model.toMap());
       ids.add(id);
