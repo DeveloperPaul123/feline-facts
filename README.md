@@ -29,9 +29,9 @@ This app attemps to use clean architecture and the `BLoC` pattern with local cac
 
 ## Screenshots
 
-| |
-|:---:|
-|<img src="images/screenshots/screen1.png" width=400/>|
+| Android | Windows
+|:---:| :---: |
+|<img src="images/screenshots/screen1.png" width=400/>| <img src="images/screenshots/windows.png" width=400/> |
 
 ## Technology Used
 
