@@ -8,7 +8,6 @@ import 'package:felinefacts/domain/usecases/get_cat_trivia_list.dart';
 import 'package:felinefacts/presentation/bloc/cat_trivia_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
-import 'package:sqflite/sqflite.dart';
 import 'package:tekartik_app_flutter_sqflite/sqflite.dart';
 
 final serviceLocator = GetIt.instance;
