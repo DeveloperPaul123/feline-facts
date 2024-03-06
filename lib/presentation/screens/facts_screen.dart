@@ -4,7 +4,6 @@ import 'package:felinefacts/presentation/widgets/fact_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:felinefacts/injection_container.dart' as di;
-import 'package:carousel_slider/carousel_slider.dart';
 
 class FactsScreen extends StatefulWidget {
   @override

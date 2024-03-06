@@ -30,8 +30,8 @@ dependencies:
   flutter_bloc: ^8.1.1
   equatable: ^2.0.3
   dartz: ^0.10.0-nullsafety.2
-  connectivity_plus: ^3.0.2
-  http: ^0.13.3
+  connectivity_plus: ^5.0.2
+  http: ^1.2.1
   carousel_slider: ^4.0.0
   cupertino_icons: ^1.0.5
   tekartik_app_flutter_sqflite:
@@ -45,7 +45,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: ^5.0.10
-  flutter_launcher_icons: ^0.11.0
+  flutter_launcher_icons: ^0.13.1
   dependency_validator: ^3.0.0
 
 flutter_icons:

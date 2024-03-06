@@ -22,7 +22,7 @@ class FactDisplay extends StatelessWidget {
             Text(
               "Fact ${index + 1} of $totalFacts",
               textAlign: TextAlign.center,
-              style: textTheme.headline3,
+              style: textTheme.displaySmall,
             ),
             SizedBox(
               height: 16.0,
@@ -30,7 +30,7 @@ class FactDisplay extends StatelessWidget {
             Text(
               fact,
               textAlign: TextAlign.justify,
-              style: textTheme.bodyText2!.apply(fontSizeFactor: 2.0),
+              style: textTheme.bodyMedium!.apply(fontSizeFactor: 2.0),
             ),
           ],
         ),
