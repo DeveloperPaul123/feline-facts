@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/license-Apache 2.0-blue" alt="License Apache 2.0">
   </a>
   
-  <a href="https://github.com/DeveloperPaul123/feline-facts/stargazers">
+  <a href="https://github.com/ptsouchlos/feline-facts/stargazers">
     <img src="https://img.shields.io/badge/Neat%20-👍-1EAEDB.svg" alt="Neat">
   </a>
   
@@ -53,7 +53,7 @@ The project is licensed under the Apache License Version 2.0. See [LICENSE](LICE
 
 ## Author
 
-| [<img src="https://avatars0.githubusercontent.com/u/6591180?s=460&v=4" width="100"><br><sub>@DeveloperPaul123</sub>](https://github.com/DeveloperPaul123) |
+| [<img src="https://avatars0.githubusercontent.com/u/6591180?s=460&v=4" width="100"><br><sub>@ptsouchlos</sub>](https://github.com/ptsouchlos) |
 |:----:|
 
 ## Credits
